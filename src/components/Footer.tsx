@@ -1,17 +1,19 @@
 "use client";
 
 import { motion } from "framer-motion";
+import Link from "next/link";
 import { Globe, MessageCircle, Users, Camera } from "lucide-react";
 
+const serviceLinks = [
+  { name: "Web Development", href: "/services/website-development" },
+  { name: "SEO Management", href: "/services/seo-management" },
+  { name: "UI/UX Design", href: "/services/ui-ux-design" },
+  { name: "Digital Marketing", href: "/services/digital-marketing" },
+  { name: "Mobile Apps", href: "/services/mobile-app-development" },
+  { name: "Custom Software", href: "/services/custom-software" },
+];
+
 const footerLinks = {
-  Services: [
-    "Web Development",
-    "SEO Management",
-    "UI/UX Design",
-    "Digital Marketing",
-    "Mobile Apps",
-    "Custom Software",
-  ],
   Company: ["About Us", "Our Team", "Careers", "Blog", "Press Kit"],
   Support: ["Contact", "FAQ", "Help Center", "Privacy Policy", "Terms of Service"],
 };
@@ -30,7 +32,7 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href="#home" className="flex items-center gap-2 mb-6">
+            <a href="/" className="flex items-center gap-2 mb-6">
               <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
                 <span className="text-white font-bold text-lg">Dx</span>
               </div>
@@ -57,7 +59,24 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Service Links */}
+          <div>
+            <h4 className="font-semibold text-white mb-4">Services</h4>
+            <ul className="space-y-3">
+              {serviceLinks.map((link) => (
+                <li key={link.name}>
+                  <Link
+                    href={link.href}
+                    className="text-sm text-muted hover:text-primary-light transition-colors"
+                  >
+                    {link.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Other Links */}
           {Object.entries(footerLinks).map(([title, links]) => (
             <div key={title}>
               <h4 className="font-semibold text-white mb-4">{title}</h4>

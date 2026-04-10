@@ -1,5 +1,5 @@
 import { notFound } from "next/navigation";
-import { services, getServiceBySlug, getAllServiceSlugs } from "@/data/services";
+import { getServiceBySlug, getAllServiceSlugs } from "@/data/services";
 import type { Metadata } from "next";
 import ServicePageContent from "@/components/ServicePageContent";
 
@@ -36,5 +36,5 @@ export default async function ServicePage(
     notFound();
   }
 
-  return <ServicePageContent service={service} />;
+  return <ServicePageContent slug={slug} />;
 }

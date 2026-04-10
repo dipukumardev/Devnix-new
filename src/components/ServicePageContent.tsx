@@ -4,16 +4,17 @@ import { motion } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowLeft, Check, ArrowRight } from "lucide-react";
-import type { ServiceData } from "@/data/services";
+import { getServiceBySlug } from "@/data/services";
+import { notFound } from "next/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
 import WhatsAppButton from "./WhatsAppButton";
 
-export default function ServicePageContent({
-  service,
-}: {
-  service: ServiceData;
-}) {
+export default function ServicePageContent({ slug }: { slug: string }) {
+  const service = getServiceBySlug(slug);
+  if (!service) {
+    notFound();
+  }
   const Icon = service.icon;
 
   return (
