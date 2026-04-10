@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import Link from "next/link";
 import { Globe, MessageCircle, Users, Camera } from "lucide-react";
+import { LogoFull } from "./Logo";
 
 const serviceLinks = [
   { name: "Web Development", href: "/services/website-development" },
@@ -32,13 +33,8 @@ export default function Footer() {
         <div className="grid grid-cols-2 md:grid-cols-4 gap-12">
           {/* Brand */}
           <div className="col-span-2 md:col-span-1">
-            <a href="/" className="flex items-center gap-2 mb-6">
-              <div className="h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Dx</span>
-              </div>
-              <span className="text-xl font-bold text-white">
-                Devni<span className="text-primary-light">x</span>
-              </span>
+            <a href="/" className="mb-6 inline-block">
+              <LogoFull />
             </a>
             <p className="text-muted text-sm leading-relaxed mb-6">
               Transforming businesses through innovative digital solutions. Your

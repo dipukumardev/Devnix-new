@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
+import { LogoFull } from "./Logo";
 
 const navLinks = [
   { name: "Home", href: "/#home" },
@@ -38,13 +39,8 @@ export default function Navbar() {
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex h-20 items-center justify-between">
             {/* Logo */}
-            <a href="/" className="flex items-center gap-2">
-              <div className="relative h-10 w-10 rounded-xl bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-lg">Dx</span>
-              </div>
-              <span className="text-xl font-bold text-white">
-                Devni<span className="text-primary-light">x</span>
-              </span>
+            <a href="/">
+              <LogoFull />
             </a>
 
             {/* Desktop Links */}

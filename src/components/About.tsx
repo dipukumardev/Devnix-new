@@ -4,6 +4,7 @@ import { motion, useInView } from "framer-motion";
 import { useRef } from "react";
 import Image from "next/image";
 import { CheckCircle2, Zap, Users, Target } from "lucide-react";
+import { LogoIcon } from "./Logo";
 
 const reasons = [
   {
@@ -74,8 +75,8 @@ export default function About() {
                       transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
                       className="w-24 h-24 mx-auto mb-6 rounded-full border-2 border-dashed border-primary/30 flex items-center justify-center"
                     >
-                      <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                        <span className="text-2xl font-bold text-white">Dx</span>
+                      <div className="w-16 h-16 flex items-center justify-center">
+                        <LogoIcon size={64} />
                       </div>
                     </motion.div>
                     <h3 className="text-2xl font-bold text-white mb-1">5+ Years</h3>
