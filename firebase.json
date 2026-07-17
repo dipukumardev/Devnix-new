@@ -1,0 +1,40 @@
+{
+  "hosting": {
+    "public": "out",
+    "trailingSlash": true,
+    "ignore": ["firebase.json", "**/.*", "**/node_modules/**"],
+    "cleanUrls": false,
+    "redirects": [
+      {
+        "source": "/work/e-commerce-platform",
+        "destination": "/work/polyhouse-smart-farming-web/",
+        "type": 301
+      },
+      {
+        "source": "/work/saas-dashboard",
+        "destination": "/work/home-tuition-bhopal/",
+        "type": 301
+      },
+      {
+        "source": "/work/restaurant-chain-seo",
+        "destination": "/#work",
+        "type": 302
+      },
+      {
+        "source": "/work/fintech-landing-page",
+        "destination": "/#work",
+        "type": 302
+      },
+      {
+        "source": "/work/brand-identity-overhaul",
+        "destination": "/#work",
+        "type": 302
+      },
+      {
+        "source": "/work/healthcare-app",
+        "destination": "/#work",
+        "type": 302
+      }
+    ]
+  }
+}

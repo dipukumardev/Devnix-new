@@ -7,7 +7,7 @@ export const SITE_NAME = "Devnix";
  * with the NEXT_PUBLIC_SITE_URL environment variable.
  */
 export const SITE_URL = (
-  process.env.NEXT_PUBLIC_SITE_URL ?? "https://www.devnix.com"
+  process.env.NEXT_PUBLIC_SITE_URL ?? "https://devnix-f0869.web.app"
 ).replace(/\/$/, "");
 /** WhatsApp `wa.me` expects digits only, country code + national number. */
 export const SITE_WHATSAPP_WA_ME = "917870655593";

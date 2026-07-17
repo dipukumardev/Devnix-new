@@ -27,29 +27,58 @@ export default function Contact({ variant = "section" }: { variant?: ContactVari
 
     const form = e.currentTarget;
     const formData = new FormData(form);
+    const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY;
 
     setStatusDetail(null);
+
+    if (!accessKey) {
+      setStatusDetail(
+        "Contact form is not configured yet. Add NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY (free key at web3forms.com)."
+      );
+      setStatus("error");
+      setTimeout(() => {
+        setStatus("idle");
+        setStatusDetail(null);
+      }, 8000);
+      return;
+    }
+
+    const name = String(formData.get("name") ?? "");
+    const email = String(formData.get("email") ?? "");
+    const service = String(formData.get("service") ?? "");
+    const message = String(formData.get("message") ?? "");
+
     try {
-      const res = await fetch("/api/contact", {
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
         body: JSON.stringify({
-          name: formData.get("name"),
-          email: formData.get("email"),
-          service: formData.get("service"),
-          message: formData.get("message"),
+          access_key: accessKey,
+          subject: `Devnix contact: ${name}`,
+          name,
+          email,
+          service: service || "Not specified",
+          message: [
+            `Name: ${name}`,
+            `Email: ${email}`,
+            `Service: ${service || "Not specified"}`,
+            "",
+            "Message:",
+            message,
+          ].join("\n"),
         }),
       });
 
       const data = (await res.json().catch(() => ({}))) as {
-        error?: string;
-        details?: string;
-        simulated?: boolean;
+        success?: boolean;
+        message?: string;
       };
 
-      if (!res.ok) {
-        const msg = [data.error, data.details].filter(Boolean).join(" — ");
-        setStatusDetail(msg || `Request failed (${res.status})`);
+      if (!res.ok || data.success === false) {
+        setStatusDetail(data.message || `Request failed (${res.status})`);
         setStatus("error");
         setTimeout(() => {
           setStatus("idle");
@@ -58,17 +87,12 @@ export default function Contact({ variant = "section" }: { variant?: ContactVari
         return;
       }
 
-      if (data.simulated) {
-        setStatusDetail(
-          "Dev mode: email not sent (add WEB3FORMS_ACCESS_KEY to .env.local — free key at web3forms.com)."
-        );
-      }
       setStatus("sent");
       form.reset();
       setTimeout(() => {
         setStatus("idle");
         setStatusDetail(null);
-      }, data.simulated ? 8000 : 4000);
+      }, 4000);
     } catch {
       setStatusDetail("Network error. Check your connection and try again.");
       setStatus("error");

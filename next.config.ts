@@ -1,40 +1,14 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  async redirects() {
-    return [
-      {
-        source: "/work/e-commerce-platform",
-        destination: "/work/polyhouse-smart-farming-web",
-        permanent: true,
-      },
-      {
-        source: "/work/saas-dashboard",
-        destination: "/work/home-tuition-bhopal",
-        permanent: true,
-      },
-      {
-        source: "/work/restaurant-chain-seo",
-        destination: "/#work",
-        permanent: false,
-      },
-      {
-        source: "/work/fintech-landing-page",
-        destination: "/#work",
-        permanent: false,
-      },
-      {
-        source: "/work/brand-identity-overhaul",
-        destination: "/#work",
-        permanent: false,
-      },
-      {
-        source: "/work/healthcare-app",
-        destination: "/#work",
-        permanent: false,
-      },
-    ];
+  // Static export for Firebase Hosting (serves the `out/` folder).
+  output: "export",
+  // Static hosting has no Next.js image optimizer; serve images as-is.
+  images: {
+    unoptimized: true,
   },
+  // Emit `/route/index.html` so clean URLs work on static hosts.
+  trailingSlash: true,
 };
 
 export default nextConfig;
