@@ -6,12 +6,12 @@ import { Globe, MessageCircle, Users, Camera } from "lucide-react";
 import { LogoFull } from "./Logo";
 
 const serviceLinks = [
+  { name: "CRM Solutions", href: "/services/crm-solutions" },
   { name: "Web Development", href: "/services/website-development" },
-  { name: "SEO Management", href: "/services/seo-management" },
-  { name: "UI/UX Design", href: "/services/ui-ux-design" },
-  { name: "Digital Marketing", href: "/services/digital-marketing" },
-  { name: "Mobile Apps", href: "/services/mobile-app-development" },
   { name: "Custom Software", href: "/services/custom-software" },
+  { name: "Mobile Apps", href: "/services/mobile-app-development" },
+  { name: "SEO Management", href: "/services/seo-management" },
+  { name: "Digital Marketing", href: "/services/digital-marketing" },
 ];
 
 const footerLinks = {
@@ -79,12 +79,21 @@ export default function Footer() {
               <ul className="space-y-3">
                 {links.map((link) => (
                   <li key={link}>
-                    <a
-                      href="#"
-                      className="text-sm text-muted hover:text-primary-light transition-colors"
-                    >
-                      {link}
-                    </a>
+                    {link === "Contact" ? (
+                      <Link
+                        href="/contact"
+                        className="text-sm text-muted hover:text-primary-light transition-colors"
+                      >
+                        {link}
+                      </Link>
+                    ) : (
+                      <a
+                        href="#"
+                        className="text-sm text-muted hover:text-primary-light transition-colors"
+                      >
+                        {link}
+                      </a>
+                    )}
                   </li>
                 ))}
               </ul>

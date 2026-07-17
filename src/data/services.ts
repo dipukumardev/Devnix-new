@@ -1,12 +1,11 @@
 import {
   Globe,
   Search,
-  Palette,
   Megaphone,
   Smartphone,
-  ShieldCheck,
-  BarChart3,
   Code2,
+  Users,
+  Workflow,
   type LucideIcon,
 } from "lucide-react";
 
@@ -40,9 +39,8 @@ export const services: ServiceData[] = [
     title: "Website Development",
     description:
       "Custom websites built with cutting-edge technologies. Fast, responsive, and optimized for conversions.",
-    color: "from-violet-500 to-purple-600",
-    image:
-      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=600&h=400&fit=crop",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/website-development.jpg",
     heroDescription:
       "We build blazing-fast, responsive websites using Next.js, React, and modern frameworks. Every site is crafted for performance, accessibility, and conversions — so your business grows from day one.",
     features: [
@@ -132,9 +130,8 @@ export const services: ServiceData[] = [
     title: "SEO Management",
     description:
       "Dominate search rankings with data-driven SEO strategies. On-page, off-page, and technical SEO expertise.",
-    color: "from-cyan-500 to-blue-600",
-    image:
-      "https://images.unsplash.com/photo-1562577309-4932fdd64cd1?w=600&h=400&fit=crop",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/seo-management.jpg",
     heroDescription:
       "Climb to the top of search results with our data-driven SEO strategies. We combine technical expertise, content optimization, and link building to deliver measurable organic growth.",
     features: [
@@ -219,106 +216,13 @@ export const services: ServiceData[] = [
     },
   },
   {
-    slug: "ui-ux-design",
-    icon: Palette,
-    title: "UI/UX Design",
-    description:
-      "Beautiful, intuitive interfaces that users love. Research-backed designs that drive engagement.",
-    color: "from-pink-500 to-rose-600",
-    image:
-      "https://images.unsplash.com/photo-1561070791-2526d30994b5?w=600&h=400&fit=crop",
-    heroDescription:
-      "We design intuitive, visually stunning interfaces backed by user research. From wireframes to pixel-perfect prototypes, every design decision is driven by data and empathy.",
-    features: [
-      {
-        title: "User Research & Personas",
-        description:
-          "Surveys, interviews, and analytics to understand your audience. We build detailed personas that guide every design decision.",
-      },
-      {
-        title: "Wireframing & Prototyping",
-        description:
-          "Interactive Figma prototypes that let you test and iterate before a single line of code is written, saving time and budget.",
-      },
-      {
-        title: "Visual Design System",
-        description:
-          "Reusable component libraries, color palettes, typography scales, and spacing systems that ensure consistency across your product.",
-      },
-      {
-        title: "Usability Testing",
-        description:
-          "Real-user testing sessions with heatmaps and session recordings to validate designs and uncover friction points.",
-      },
-      {
-        title: "Responsive & Accessible Design",
-        description:
-          "WCAG 2.1 compliant designs that work beautifully across all devices, ensuring everyone can use your product.",
-      },
-      {
-        title: "Design Handoff",
-        description:
-          "Pixel-perfect specs, exportable assets, and developer-ready Figma files that make implementation smooth and accurate.",
-      },
-    ],
-    process: [
-      "Discovery workshops & user research",
-      "Information architecture & user flows",
-      "Low-fidelity wireframes",
-      "High-fidelity prototypes & visual design",
-      "Usability testing & iteration",
-    ],
-    benefits: [
-      "Research-backed designs increase conversions by 200%",
-      "Consistent design systems speed up development",
-      "Accessible design expands your audience reach",
-      "Prototyping catches issues before development",
-      "User-centered approach reduces churn",
-    ],
-    pricing: {
-      starter: {
-        price: "$1,499",
-        features: [
-          "Up to 5 screens",
-          "Wireframes",
-          "Visual mockups",
-          "1 revision round",
-          "Design handoff",
-        ],
-      },
-      professional: {
-        price: "$3,999",
-        features: [
-          "Up to 15 screens",
-          "User research",
-          "Interactive prototypes",
-          "Design system",
-          "3 revision rounds",
-          "Usability testing",
-        ],
-      },
-      enterprise: {
-        price: "Custom",
-        features: [
-          "Unlimited screens",
-          "Full research program",
-          "Design system library",
-          "Ongoing design support",
-          "Dedicated designer",
-          "Priority iterations",
-        ],
-      },
-    },
-  },
-  {
     slug: "digital-marketing",
     icon: Megaphone,
     title: "Digital Marketing",
     description:
       "Full-funnel marketing strategies. PPC, social media, email campaigns, and content marketing.",
-    color: "from-orange-500 to-amber-600",
-    image:
-      "https://images.unsplash.com/photo-1533750349088-cd871a92f312?w=600&h=400&fit=crop",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/digital-marketing.jpg",
     heroDescription:
       "From awareness to conversion, we craft full-funnel marketing strategies that reach the right audience at the right time. PPC, social media, email, and content — all working together for maximum ROI.",
     features: [
@@ -408,9 +312,8 @@ export const services: ServiceData[] = [
     title: "Mobile App Development",
     description:
       "Native and cross-platform mobile apps. iOS, Android, and Progressive Web Apps built to perform.",
-    color: "from-green-500 to-emerald-600",
-    image:
-      "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=600&h=400&fit=crop",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/mobile-app-development.jpg",
     heroDescription:
       "We build high-performance mobile apps for iOS and Android using React Native and Flutter. From concept to App Store, we deliver apps that users love and businesses rely on.",
     features: [
@@ -496,198 +399,13 @@ export const services: ServiceData[] = [
     },
   },
   {
-    slug: "brand-identity",
-    icon: ShieldCheck,
-    title: "Brand Identity",
-    description:
-      "Craft a memorable brand. Logo design, brand guidelines, visual identity, and brand strategy.",
-    color: "from-indigo-500 to-blue-600",
-    image:
-      "https://images.unsplash.com/photo-1558655146-9f40138edfeb?w=600&h=400&fit=crop",
-    heroDescription:
-      "Your brand is more than a logo — it's the feeling people get when they interact with your business. We craft complete brand identities that are memorable, consistent, and built to scale.",
-    features: [
-      {
-        title: "Logo Design",
-        description:
-          "Multiple concept explorations, from minimalist wordmarks to detailed icons, refined through iterative feedback until it's perfect.",
-      },
-      {
-        title: "Brand Guidelines",
-        description:
-          "Comprehensive brand book covering logo usage, color palettes, typography, iconography, photography style, and tone of voice.",
-      },
-      {
-        title: "Visual Identity System",
-        description:
-          "Business cards, letterheads, email signatures, social media templates, and presentation decks — all cohesive and on-brand.",
-      },
-      {
-        title: "Brand Strategy",
-        description:
-          "Market positioning, competitor analysis, target audience definition, brand values, and messaging framework.",
-      },
-      {
-        title: "Brand Voice & Messaging",
-        description:
-          "Tone of voice guidelines, taglines, elevator pitches, and key messaging that resonates with your audience.",
-      },
-      {
-        title: "Brand Launch Support",
-        description:
-          "Rollout strategy, announcement materials, and team training to ensure consistent brand application from day one.",
-      },
-    ],
-    process: [
-      "Brand discovery & strategy workshop",
-      "Market research & competitor analysis",
-      "Concept development & exploration",
-      "Design refinement & feedback",
-      "Brand guideline documentation & delivery",
-    ],
-    benefits: [
-      "Strong brand identity builds instant trust",
-      "Consistent visuals increase recognition by 80%",
-      "Clear brand strategy guides all marketing efforts",
-      "Professional identity attracts premium clients",
-      "Scalable system grows with your business",
-    ],
-    pricing: {
-      starter: {
-        price: "$1,999",
-        features: [
-          "Logo design (3 concepts)",
-          "Color palette",
-          "Typography selection",
-          "Basic brand guide",
-          "Business card design",
-        ],
-      },
-      professional: {
-        price: "$4,999",
-        features: [
-          "Logo design (5 concepts)",
-          "Full brand guidelines",
-          "Stationery suite",
-          "Social media templates",
-          "Brand voice guide",
-          "Presentation template",
-        ],
-      },
-      enterprise: {
-        price: "Custom",
-        features: [
-          "Complete brand strategy",
-          "Unlimited concepts",
-          "Full visual identity system",
-          "Brand launch support",
-          "Team training",
-          "Ongoing brand consulting",
-        ],
-      },
-    },
-  },
-  {
-    slug: "analytics-reporting",
-    icon: BarChart3,
-    title: "Analytics & Reporting",
-    description:
-      "Data-driven decisions with comprehensive analytics. Track, measure, and optimize your performance.",
-    color: "from-teal-500 to-cyan-600",
-    image:
-      "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
-    heroDescription:
-      "Turn raw data into actionable insights. We set up comprehensive analytics, build custom dashboards, and deliver reports that help you make smarter business decisions.",
-    features: [
-      {
-        title: "Analytics Setup & Configuration",
-        description:
-          "Google Analytics 4, Tag Manager, and conversion tracking properly configured to capture every meaningful user interaction.",
-      },
-      {
-        title: "Custom Dashboards",
-        description:
-          "Real-time dashboards in Looker Studio, Tableau, or custom-built solutions showing KPIs that matter to your business.",
-      },
-      {
-        title: "Conversion Tracking",
-        description:
-          "End-to-end funnel tracking from first touch to purchase, with attribution modeling across all marketing channels.",
-      },
-      {
-        title: "User Behavior Analysis",
-        description:
-          "Heatmaps, session recordings, and user flow analysis that reveal exactly how visitors interact with your site.",
-      },
-      {
-        title: "A/B Testing Framework",
-        description:
-          "Structured testing programs that validate hypotheses and drive incremental improvements in conversion rates.",
-      },
-      {
-        title: "Executive Reporting",
-        description:
-          "Clear, visual monthly reports translating complex data into plain-language insights and actionable recommendations.",
-      },
-    ],
-    process: [
-      "Analytics audit & goal definition",
-      "Tracking implementation & testing",
-      "Dashboard design & setup",
-      "Initial data analysis & baseline",
-      "Ongoing monitoring & optimization",
-    ],
-    benefits: [
-      "Data-driven decisions reduce guesswork",
-      "Conversion tracking reveals true marketing ROI",
-      "User insights uncover hidden revenue opportunities",
-      "A/B testing drives continuous improvement",
-      "Custom dashboards save hours of manual reporting",
-    ],
-    pricing: {
-      starter: {
-        price: "$599",
-        features: [
-          "GA4 setup & configuration",
-          "Basic event tracking",
-          "1 custom dashboard",
-          "Monthly report",
-          "1 month support",
-        ],
-      },
-      professional: {
-        price: "$1,499",
-        features: [
-          "Full analytics stack",
-          "Advanced event tracking",
-          "3 custom dashboards",
-          "Conversion funnels",
-          "Bi-weekly reports",
-          "3 months support",
-        ],
-      },
-      enterprise: {
-        price: "Custom",
-        features: [
-          "Enterprise analytics setup",
-          "Custom data pipeline",
-          "Unlimited dashboards",
-          "A/B testing program",
-          "Weekly reports",
-          "Dedicated analyst",
-        ],
-      },
-    },
-  },
-  {
     slug: "custom-software",
     icon: Code2,
     title: "Custom Software",
     description:
       "Tailored software solutions for complex business needs. APIs, dashboards, and enterprise tools.",
-    color: "from-fuchsia-500 to-purple-600",
-    image:
-      "https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=600&h=400&fit=crop",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/custom-software.jpg",
     heroDescription:
       "Off-the-shelf software doesn't fit every business. We build custom solutions — APIs, dashboards, automation tools, and enterprise platforms — engineered for your exact workflow.",
     features: [
@@ -765,6 +483,188 @@ export const services: ServiceData[] = [
           "Microservices architecture",
           "Compliance & security audit",
           "Dedicated dev team",
+          "SLA guarantees",
+          "12 months support",
+        ],
+      },
+    },
+  },
+  {
+    slug: "crm-solutions",
+    icon: Users,
+    title: "CRM Solutions",
+    description:
+      "Custom CRM platforms to manage leads, customers, and sales pipelines. Automate follow-ups and close more deals.",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/crm-solutions.jpg",
+    heroDescription:
+      "We design and build CRM systems tailored to how your team actually sells and supports customers — centralize contacts, automate follow-ups, track pipelines, and get a single source of truth that grows revenue.",
+    features: [
+      {
+        title: "Lead & Contact Management",
+        description:
+          "Capture, organize, and segment every lead and customer in one place, with custom fields, tags, and activity timelines.",
+      },
+      {
+        title: "Sales Pipeline & Deals",
+        description:
+          "Visual drag-and-drop pipelines, stage automation, deal forecasting, and win/loss tracking so nothing slips through the cracks.",
+      },
+      {
+        title: "Automation & Reminders",
+        description:
+          "Automate follow-up emails, task assignments, and reminders based on triggers so your team focuses on selling, not admin.",
+      },
+      {
+        title: "Integrations",
+        description:
+          "Connect email, WhatsApp, calling, payments, and marketing tools so customer data stays in sync across your stack.",
+      },
+      {
+        title: "Dashboards & Reports",
+        description:
+          "Real-time dashboards for revenue, conversion rates, team performance, and activity — exportable and role-based.",
+      },
+      {
+        title: "Roles & Permissions",
+        description:
+          "Granular access control so sales, support, and management each see exactly what they need — nothing more.",
+      },
+    ],
+    process: [
+      "Discovery of your sales & support workflow",
+      "Data model & pipeline design",
+      "Build, automation & integrations",
+      "Data migration & team onboarding",
+      "Launch, training & ongoing support",
+    ],
+    benefits: [
+      "Single source of truth for every customer",
+      "Automation saves hours of manual follow-up",
+      "Higher conversion with structured pipelines",
+      "Clear reporting for data-driven decisions",
+      "Scales with your team and processes",
+    ],
+    pricing: {
+      starter: {
+        price: "$2,999",
+        features: [
+          "Core CRM setup",
+          "Lead & contact management",
+          "1 sales pipeline",
+          "Basic automation",
+          "3 months support",
+        ],
+      },
+      professional: {
+        price: "$7,999",
+        features: [
+          "Multiple pipelines",
+          "Advanced automation",
+          "Email & WhatsApp integration",
+          "Custom dashboards",
+          "Role-based access",
+          "6 months support",
+        ],
+      },
+      enterprise: {
+        price: "Custom",
+        features: [
+          "Fully custom CRM platform",
+          "Deep third-party integrations",
+          "Data migration included",
+          "Dedicated success manager",
+          "SLA guarantees",
+          "12 months support",
+        ],
+      },
+    },
+  },
+  {
+    slug: "automation-software",
+    icon: Workflow,
+    title: "Automation Software",
+    description:
+      "Automate repetitive tasks and connect your tools. Custom workflows, bots, and integrations that save hours every week.",
+    color: "from-blue-600 to-emerald-500",
+    image: "/images/services/automation-software.jpg",
+    heroDescription:
+      "Stop doing manual, repetitive work. We build automation software that connects your apps, moves data, and runs workflows on autopilot — so your team can focus on what actually grows the business.",
+    features: [
+      {
+        title: "Workflow Automation",
+        description:
+          "Design end-to-end workflows that trigger actions across your tools — no more copy-pasting between spreadsheets and apps.",
+      },
+      {
+        title: "App & API Integrations",
+        description:
+          "Connect CRMs, payments, email, WhatsApp, sheets, and internal systems into one automated pipeline that just works.",
+      },
+      {
+        title: "Bots & Auto-Replies",
+        description:
+          "Chatbots, email/WhatsApp auto-responders, and notification bots that handle routine requests around the clock.",
+      },
+      {
+        title: "Data Sync & Migration",
+        description:
+          "Keep records consistent across platforms with scheduled syncs, deduplication, and reliable data transfers.",
+      },
+      {
+        title: "Scheduled Jobs & Alerts",
+        description:
+          "Automated reports, reminders, and threshold-based alerts delivered exactly when and where your team needs them.",
+      },
+      {
+        title: "Monitoring & Logs",
+        description:
+          "Built-in error handling, retries, and activity logs so every automation is transparent, auditable, and dependable.",
+      },
+    ],
+    process: [
+      "Audit of manual & repetitive tasks",
+      "Workflow mapping & tool selection",
+      "Build automations & integrations",
+      "Testing, error handling & rollout",
+      "Monitoring, tuning & ongoing support",
+    ],
+    benefits: [
+      "Save 10-20+ hours of manual work weekly",
+      "Eliminate human error in routine tasks",
+      "Connect disconnected tools into one flow",
+      "Faster response times with 24/7 automation",
+      "Scales effortlessly as volume grows",
+    ],
+    pricing: {
+      starter: {
+        price: "$1,499",
+        features: [
+          "Up to 3 automated workflows",
+          "2 app integrations",
+          "Basic notifications",
+          "Error alerts",
+          "1 month support",
+        ],
+      },
+      professional: {
+        price: "$4,499",
+        features: [
+          "Up to 10 workflows",
+          "Advanced integrations",
+          "Bots & auto-replies",
+          "Scheduled reports",
+          "Monitoring dashboard",
+          "3 months support",
+        ],
+      },
+      enterprise: {
+        price: "Custom",
+        features: [
+          "Unlimited workflows",
+          "Custom integrations & APIs",
+          "Dedicated automation engineer",
+          "Advanced logging & audits",
           "SLA guarantees",
           "12 months support",
         ],

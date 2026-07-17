@@ -11,7 +11,7 @@ const navLinks = [
   { name: "About", href: "/#about" },
   { name: "Work", href: "/#work" },
   { name: "Testimonials", href: "/#testimonials" },
-  { name: "Contact", href: "/#contact" },
+  { name: "Contact", href: "/contact" },
 ];
 
 export default function Navbar() {
@@ -56,7 +56,7 @@ export default function Navbar() {
                 </a>
               ))}
               <a
-                href="/#contact"
+                href="/contact"
                 className="relative inline-flex items-center px-6 py-2.5 rounded-full bg-gradient-to-r from-primary to-accent text-white text-sm font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
               >
                 Get Started
@@ -98,7 +98,7 @@ export default function Navbar() {
                 </motion.a>
               ))}
               <motion.a
-                href="/#contact"
+                href="/contact"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.6 }}

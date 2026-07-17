@@ -7,6 +7,23 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { services } from "@/data/services";
 
+const FEATURED_ORDER = [
+  "crm-solutions",
+  "automation-software",
+  "website-development",
+  "custom-software",
+  "mobile-app-development",
+  "seo-management",
+  "digital-marketing",
+];
+
+const orderedServices = [
+  ...FEATURED_ORDER.map((slug) => services.find((s) => s.slug === slug)).filter(
+    (s): s is (typeof services)[number] => Boolean(s)
+  ),
+  ...services.filter((s) => !FEATURED_ORDER.includes(s.slug)),
+];
+
 export default function Services() {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
@@ -39,7 +56,7 @@ export default function Services() {
 
         {/* Services Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          {services.map((service, index) => (
+          {orderedServices.map((service, index) => (
             <Link
               key={service.title}
               href={`/services/${service.slug}`}

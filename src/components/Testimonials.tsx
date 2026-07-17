@@ -12,7 +12,7 @@ const testimonials = [
     content:
       "Devnix transformed our online presence completely. Our website traffic increased by 200% and our conversion rate doubled within the first three months.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/01.jpg",
   },
   {
     name: "Michael Chen",
@@ -20,7 +20,7 @@ const testimonials = [
     content:
       "The team's attention to detail and creative approach exceeded our expectations. They didn't just build a website — they built a growth engine for our business.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/02.jpg",
   },
   {
     name: "Emily Rodriguez",
@@ -28,7 +28,7 @@ const testimonials = [
     content:
       "Working with Devnix on our SEO strategy was a game-changer. We went from page 5 to page 1 for our target keywords. Outstanding results.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/03.jpg",
   },
   {
     name: "David Kim",
@@ -36,7 +36,7 @@ const testimonials = [
     content:
       "Their technical expertise is unmatched. The custom dashboard they built handles millions of data points seamlessly. Highly recommend for complex projects.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/04.jpg",
   },
   {
     name: "Lisa Thompson",
@@ -44,7 +44,7 @@ const testimonials = [
     content:
       "From branding to e-commerce, Devnix handled everything. My online store now generates 3x more revenue than my physical store. Incredible team!",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/05.jpg",
   },
   {
     name: "James Wilson",
@@ -52,7 +52,7 @@ const testimonials = [
     content:
       "The mobile app they developed is smooth, fast, and our users love it. Downloads increased by 150% after the redesign. Best investment we've made.",
     rating: 5,
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face",
+    avatar: "/images/avatars/06.jpg",
   },
 ];
 
@@ -65,7 +65,7 @@ export default function Testimonials() {
       {/* Section background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1557804506-669a67965ba0?w=1920&h=1080&fit=crop"
+          src="/images/testimonials-bg.jpg"
           alt="Business meeting"
           fill
           className="object-cover opacity-[0.05]"

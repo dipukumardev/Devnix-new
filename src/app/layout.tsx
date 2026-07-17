@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import WhatsAppButton from "@/components/WhatsAppButton";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -35,8 +36,13 @@ export default function RootLayout({
     <html
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      suppressHydrationWarning
     >
-      <body className="min-h-full flex flex-col">{children}</body>
+      {/* suppressHydrationWarning: extensions (e.g. ColorZilla) inject attributes like cz-shortcut-listen on <body> before React hydrates. */}
+      <body className="min-h-full flex flex-col" suppressHydrationWarning>
+        {children}
+        <WhatsAppButton />
+      </body>
     </html>
   );
 }

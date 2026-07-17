@@ -10,13 +10,13 @@ export function LogoIcon({ size = 40 }: { size?: number }) {
     >
       <defs>
         <linearGradient id="logo-grad" x1="0" y1="0" x2="120" y2="120" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#8b5cf6" />
-          <stop offset="0.5" stopColor="#6d28d9" />
-          <stop offset="1" stopColor="#06b6d4" />
+          <stop stopColor="#2563eb" />
+          <stop offset="0.45" stopColor="#3b82f6" />
+          <stop offset="1" stopColor="#10b981" />
         </linearGradient>
         <linearGradient id="icon-accent" x1="40" y1="20" x2="100" y2="100" gradientUnits="userSpaceOnUse">
           <stop stopColor="#ffffff" />
-          <stop offset="1" stopColor="#e0e7ff" />
+          <stop offset="1" stopColor="#dbeafe" />
         </linearGradient>
       </defs>
       {/* Rounded square background */}
@@ -40,7 +40,7 @@ export function LogoIcon({ size = 40 }: { size?: number }) {
         strokeLinejoin="round"
       />
       {/* Small diamond accent dot */}
-      <rect x="96" y="40" width="8" height="8" rx="2" transform="rotate(45 100 44)" fill="#22d3ee" />
+      <rect x="96" y="40" width="8" height="8" rx="2" transform="rotate(45 100 44)" fill="#34d399" />
     </svg>
   );
 }

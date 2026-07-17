@@ -38,7 +38,7 @@ export default function About() {
       {/* Section background image */}
       <div className="absolute inset-0">
         <Image
-          src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1920&h=1080&fit=crop"
+          src="/images/about-bg.jpg"
           alt="Team collaboration"
           fill
           className="object-cover opacity-[0.07]"
@@ -60,7 +60,7 @@ export default function About() {
               <div className="absolute inset-0 rounded-3xl bg-gradient-to-br from-primary/20 to-accent/20 rotate-6 scale-95" />
               <div className="absolute inset-0 rounded-3xl overflow-hidden border border-border">
                 <Image
-                  src="https://images.unsplash.com/photo-1553877522-43269d4ea984?w=800&h=800&fit=crop"
+                  src="/images/about-side.jpg"
                   alt="Our team working together"
                   fill
                   className="object-cover"

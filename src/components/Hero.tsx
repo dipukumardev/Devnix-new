@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 import { ArrowRight, Sparkles } from "lucide-react";
 
 export default function Hero() {
@@ -10,14 +11,27 @@ export default function Hero() {
       id="home"
       className="relative min-h-screen flex items-center justify-center overflow-hidden"
     >
-      {/* Background Image */}
+      {/* Background Video (image poster as fallback) */}
       <div className="absolute inset-0">
+        <video
+          className="h-full w-full object-cover"
+          autoPlay
+          muted
+          loop
+          playsInline
+          preload="auto"
+          poster="/images/hero-bg.jpg"
+          aria-hidden="true"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+        {/* Fallback image behind the video for no-JS / codec issues */}
         <Image
-          src="https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1920&h=1080&fit=crop"
-          alt="Digital technology background"
+          src="/images/hero-bg.jpg"
+          alt=""
           fill
           priority
-          className="object-cover"
+          className="-z-10 object-cover"
         />
         <div className="absolute inset-0 bg-background/80" />
         <div className="absolute inset-0 bg-grid" />
@@ -112,8 +126,8 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.6 }}
           className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
         >
-          <a
-            href="#contact"
+          <Link
+            href="/contact"
             className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium text-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
           >
             Start Your Project
@@ -121,7 +135,7 @@ export default function Hero() {
               size={20}
               className="group-hover:translate-x-1 transition-transform"
             />
-          </a>
+          </Link>
           <a
             href="#work"
             className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-white font-medium text-lg hover:bg-surface-light transition-all duration-300"
@@ -138,9 +152,9 @@ export default function Hero() {
           className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
         >
           {[
-            { number: "150+", label: "Projects Delivered" },
-            { number: "50+", label: "Happy Clients" },
-            { number: "5+", label: "Years Experience" },
+            { number: "15+", label: "Projects Delivered" },
+            { number: "12+", label: "Happy Clients" },
+            { number: "2+", label: "Years Experience" },
             { number: "99%", label: "Client Satisfaction" },
           ].map((stat, i) => (
             <motion.div

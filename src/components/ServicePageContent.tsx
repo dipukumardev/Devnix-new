@@ -8,7 +8,6 @@ import { getServiceBySlug } from "@/data/services";
 import { notFound } from "next/navigation";
 import Navbar from "./Navbar";
 import Footer from "./Footer";
-import WhatsAppButton from "./WhatsAppButton";
 
 export default function ServicePageContent({ slug }: { slug: string }) {
   const service = getServiceBySlug(slug);
@@ -20,7 +19,6 @@ export default function ServicePageContent({ slug }: { slug: string }) {
   return (
     <>
       <Navbar />
-      <WhatsAppButton />
       <main className="pt-20">
         {/* Hero Section */}
         <section className="relative overflow-hidden py-20 lg:py-32">
@@ -262,7 +260,7 @@ export default function ServicePageContent({ slug }: { slug: string }) {
                     </ul>
 
                     <Link
-                      href="/#contact"
+                      href="/contact"
                       className={`inline-flex items-center justify-center w-full py-3 rounded-xl font-medium text-sm transition-all duration-300 ${
                         isPopular
                           ? `bg-gradient-to-r ${service.color} text-white hover:shadow-lg hover:shadow-primary/25 hover:scale-105`
@@ -298,7 +296,7 @@ export default function ServicePageContent({ slug }: { slug: string }) {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <Link
-                  href="/#contact"
+                  href="/contact"
                   className={`inline-flex items-center justify-center px-8 py-4 rounded-full bg-gradient-to-r ${service.color} text-white font-medium hover:shadow-lg hover:shadow-primary/25 transition-all duration-300 hover:scale-105`}
                 >
                   Start Your Project
