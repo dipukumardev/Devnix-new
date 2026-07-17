@@ -92,6 +92,7 @@ export default function Contact({ variant = "section" }: { variant?: ContactVari
           src="/images/contact-bg.jpg"
           alt="Modern office space"
           fill
+          sizes="100vw"
           className="object-cover opacity-[0.06]"
         />
       </div>
@@ -291,6 +292,7 @@ export default function Contact({ variant = "section" }: { variant?: ContactVari
                   src="/images/contact-meeting.jpg"
                   alt="Consultation meeting"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover opacity-20"
                 />
                 <div className="absolute inset-0 bg-gradient-to-br from-primary/20 to-accent/20" />

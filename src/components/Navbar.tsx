@@ -8,7 +8,6 @@ import { LogoFull } from "./Logo";
 const navLinks = [
   { name: "Home", href: "/#home" },
   { name: "Services", href: "/#services" },
-  { name: "About", href: "/#about" },
   { name: "Work", href: "/#work" },
   { name: "Testimonials", href: "/#testimonials" },
   { name: "Contact", href: "/contact" },

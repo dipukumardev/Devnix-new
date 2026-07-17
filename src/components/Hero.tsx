@@ -31,6 +31,7 @@ export default function Hero() {
           alt=""
           fill
           priority
+          sizes="100vw"
           className="-z-10 object-cover"
         />
         <div className="absolute inset-0 bg-background/80" />
@@ -90,7 +91,7 @@ export default function Hero() {
         >
           <Sparkles size={14} className="text-accent" />
           <span className="text-sm text-muted">
-            Your Digital Growth Partner
+            Automation • Custom Software • CRM
           </span>
         </motion.div>
 
@@ -103,9 +104,9 @@ export default function Hero() {
         >
           <span className="text-white">We Build</span>
           <br />
-          <span className="gradient-text">Digital Experiences</span>
+          <span className="gradient-text">Software That Runs</span>
           <br />
-          <span className="text-white">That Convert</span>
+          <span className="text-white">Your Business</span>
         </motion.h1>
 
         {/* Subtitle */}
@@ -115,8 +116,9 @@ export default function Hero() {
           transition={{ duration: 0.6, delay: 0.4 }}
           className="mt-8 text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed"
         >
-          From stunning websites to SEO dominance — we offer every digital
-          service your business needs to thrive in the modern world.
+          From business automation tools and custom software like CRMs to
+          high-performing websites and mobile apps — we build everything your
+          business needs to scale.
         </motion.p>
 
         {/* CTA Buttons */}

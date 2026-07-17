@@ -14,6 +14,16 @@ export interface ServiceFeature {
   description: string;
 }
 
+export interface ServiceStat {
+  number: string;
+  label: string;
+}
+
+export interface ServiceFaq {
+  q: string;
+  a: string;
+}
+
 export interface ServiceData {
   slug: string;
   icon: LucideIcon;
@@ -25,6 +35,8 @@ export interface ServiceData {
   features: ServiceFeature[];
   process: string[];
   benefits: string[];
+  stats?: ServiceStat[];
+  faqs?: ServiceFaq[];
   pricing: {
     starter: { price: string; features: string[] };
     professional: { price: string; features: string[] };
@@ -91,7 +103,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$999",
+        price: "₹14,999",
         features: [
           "Up to 5 pages",
           "Responsive design",
@@ -101,7 +113,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$2,499",
+        price: "₹29,999",
         features: [
           "Up to 15 pages",
           "Custom animations",
@@ -182,7 +194,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$499/mo",
+        price: "₹14,999/mo",
         features: [
           "Up to 10 keywords",
           "Monthly SEO audit",
@@ -192,7 +204,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$999/mo",
+        price: "₹29,999/mo",
         features: [
           "Up to 30 keywords",
           "Technical SEO fixes",
@@ -273,7 +285,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$799/mo",
+        price: "₹24,999/mo",
         features: [
           "1 advertising channel",
           "Social media management (2 platforms)",
@@ -283,7 +295,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$1,999/mo",
+        price: "₹59,999/mo",
         features: [
           "3 advertising channels",
           "Social media (4 platforms)",
@@ -364,7 +376,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$4,999",
+        price: "₹49,999",
         features: [
           "Single platform (iOS or Android)",
           "Up to 8 screens",
@@ -375,7 +387,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$9,999",
+        price: "₹1,99,999",
         features: [
           "iOS + Android",
           "Up to 20 screens",
@@ -456,7 +468,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$5,999",
+        price: "₹1,50,999",
         features: [
           "Single application",
           "Basic API integration",
@@ -466,7 +478,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$14,999",
+        price: "₹2,99,999",
         features: [
           "Multi-module system",
           "Advanced integrations",
@@ -547,7 +559,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$2,999",
+        price: "₹35,000",
         features: [
           "Core CRM setup",
           "Lead & contact management",
@@ -557,7 +569,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$7,999",
+        price: "₹1,50,999",
         features: [
           "Multiple pipelines",
           "Advanced automation",
@@ -638,7 +650,7 @@ export const services: ServiceData[] = [
     ],
     pricing: {
       starter: {
-        price: "$1,499",
+        price: "₹40,000",
         features: [
           "Up to 3 automated workflows",
           "2 app integrations",
@@ -648,7 +660,7 @@ export const services: ServiceData[] = [
         ],
       },
       professional: {
-        price: "$4,499",
+        price: "₹1,29,999",
         features: [
           "Up to 10 workflows",
           "Advanced integrations",

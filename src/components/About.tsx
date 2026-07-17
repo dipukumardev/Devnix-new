@@ -41,6 +41,7 @@ export default function About() {
           src="/images/about-bg.jpg"
           alt="Team collaboration"
           fill
+          sizes="100vw"
           className="object-cover opacity-[0.07]"
         />
       </div>
@@ -63,6 +64,7 @@ export default function About() {
                   src="/images/about-side.jpg"
                   alt="Our team working together"
                   fill
+                  sizes="(min-width: 1024px) 50vw, 100vw"
                   className="object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/60 to-surface/30" />

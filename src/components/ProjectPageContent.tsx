@@ -35,6 +35,7 @@ export default function ProjectPageContent({ slug }: { slug: string }) {
               className="object-cover object-center"
               priority
               sizes="100vw"
+              sizes="100vw"
             />
             <div className="absolute inset-0 bg-background/75 lg:bg-background/65" />
             <div className="absolute inset-0 bg-gradient-to-br from-background via-background/90 to-primary/10" />

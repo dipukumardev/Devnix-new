@@ -66,7 +66,7 @@ export default function Services() {
                 initial={{ opacity: 0, y: 40 }}
                 animate={isInView ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.5, delay: index * 0.1 }}
-                className="group relative rounded-2xl overflow-hidden bg-surface border border-border hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 hover:shadow-xl hover:shadow-primary/5 h-full"
+                className="group relative rounded-2xl overflow-hidden bg-surface border border-border hover:border-primary/30 transition-all duration-500 hover:-translate-y-2 h-full"
               >
                 {/* Background Image */}
                 <div className="relative h-40 overflow-hidden">
@@ -74,10 +74,11 @@ export default function Services() {
                     src={service.image}
                     alt={service.title}
                     fill
+                    sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw"
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className={`absolute inset-0 bg-gradient-to-b ${service.color} opacity-60`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/50 to-transparent" />
+                  <div className={`absolute inset-0 bg-gradient-to-b ${service.color} opacity-20`} />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/20 to-transparent" />
                   {/* Icon overlay */}
                   <div className="absolute bottom-4 left-6">
                     <div

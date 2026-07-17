@@ -2,6 +2,7 @@ import { notFound } from "next/navigation";
 import { getServiceBySlug, getAllServiceSlugs } from "@/data/services";
 import type { Metadata } from "next";
 import ServicePageContent from "@/components/ServicePageContent";
+import CrmServiceContent from "@/components/CrmServiceContent";
 
 export async function generateStaticParams() {
   return getAllServiceSlugs().map((slug) => ({ slug }));
@@ -15,7 +16,7 @@ export async function generateMetadata(
   if (!service) return {};
 
   return {
-    title: `${service.title} | Devnix Digital Agency`,
+    title: service.title,
     description: service.heroDescription,
     keywords: [
       service.title.toLowerCase(),
@@ -23,6 +24,16 @@ export async function generateMetadata(
       "devnix",
       ...service.title.toLowerCase().split(" "),
     ],
+    alternates: {
+      canonical: `/services/${slug}`,
+    },
+    openGraph: {
+      type: "website",
+      title: service.title,
+      description: service.heroDescription,
+      url: `/services/${slug}`,
+      images: [service.image],
+    },
   };
 }
 
@@ -34,6 +45,10 @@ export default async function ServicePage(
 
   if (!service) {
     notFound();
+  }
+
+  if (slug === "crm-solutions") {
+    return <CrmServiceContent />;
   }
 
   return <ServicePageContent slug={slug} />;

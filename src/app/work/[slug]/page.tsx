@@ -20,7 +20,7 @@ export async function generateMetadata({
   if (!project) return {};
 
   return {
-    title: `${project.title} | Devnix Case Study`,
+    title: `${project.title} — Case Study`,
     description: project.summary,
     keywords: [
       project.title.toLowerCase(),
@@ -29,6 +29,16 @@ export async function generateMetadata({
       "devnix",
       ...project.tags.map((t) => t.toLowerCase()),
     ],
+    alternates: {
+      canonical: `/work/${slug}`,
+    },
+    openGraph: {
+      type: "article",
+      title: `${project.title} — Case Study`,
+      description: project.summary,
+      url: `/work/${slug}`,
+      images: [project.image],
+    },
   };
 }
 
