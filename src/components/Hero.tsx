@@ -9,7 +9,7 @@ export default function Hero() {
   return (
     <section
       id="home"
-      className="relative min-h-screen flex items-center justify-center overflow-hidden"
+      className="relative flex min-h-dvh flex-col items-center justify-center overflow-hidden pt-20 pb-6 sm:pb-8"
     >
       {/* Background Video (image poster as fallback) */}
       <div className="absolute inset-0">
@@ -47,7 +47,7 @@ export default function Hero() {
             scale: [1, 1.2, 1],
           }}
           transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-          className="absolute top-1/4 left-1/4 w-96 h-96 rounded-full bg-primary/20 blur-[128px]"
+          className="absolute top-1/4 left-1/4 h-72 w-72 rounded-full bg-primary/20 blur-[128px] md:h-96 md:w-96"
         />
         <motion.div
           animate={{
@@ -56,15 +56,15 @@ export default function Hero() {
             scale: [1, 1.3, 1],
           }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-          className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full bg-accent/20 blur-[128px]"
+          className="absolute bottom-1/4 right-1/4 h-72 w-72 rounded-full bg-accent/20 blur-[128px] md:h-96 md:w-96"
         />
       </div>
 
-      {/* Floating particles */}
+      {/* Floating particles — hidden on short viewports to reduce clutter */}
       {[...Array(6)].map((_, i) => (
         <motion.div
           key={i}
-          className="absolute w-1 h-1 rounded-full bg-primary-light/40"
+          className="absolute hidden h-1 w-1 rounded-full bg-primary-light/40 min-[900px]:block"
           style={{
             top: `${20 + i * 12}%`,
             left: `${10 + i * 15}%`,
@@ -81,26 +81,26 @@ export default function Hero() {
         />
       ))}
 
-      <div className="relative z-10 mx-auto max-w-7xl px-6 lg:px-8 text-center">
+      <div className="relative z-10 mx-auto w-full max-w-7xl px-6 text-center lg:px-8">
         {/* Badge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
-          className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-border bg-surface/50 backdrop-blur-sm mb-8"
+          className="mb-4 inline-flex items-center gap-2 rounded-full border border-border bg-surface/50 px-3 py-1.5 backdrop-blur-sm sm:mb-6 sm:px-4 sm:py-2 [@media(max-height:720px)]:mb-3"
         >
           <Sparkles size={14} className="text-accent" />
-          <span className="text-sm text-muted">
+          <span className="text-xs text-muted sm:text-sm">
             Automation • Custom Software • CRM
           </span>
         </motion.div>
 
-        {/* Heading */}
+        {/* Heading — fluid type so it fits short and tall screens */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-none"
+          className="text-[clamp(2rem,5.5vw+0.5rem,5.5rem)] font-bold leading-[1.05] tracking-tight [@media(max-height:720px)]:text-[clamp(1.75rem,4vw+0.5rem,3.25rem)]"
         >
           <span className="text-white">We Build</span>
           <br />
@@ -114,7 +114,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.4 }}
-          className="mt-8 text-lg md:text-xl text-muted max-w-2xl mx-auto leading-relaxed"
+          className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-muted sm:mt-6 sm:text-lg md:text-xl [@media(max-height:720px)]:mt-3 [@media(max-height:720px)]:text-sm"
         >
           From business automation tools and custom software like CRMs to
           high-performing websites and mobile apps — we build everything your
@@ -126,21 +126,21 @@ export default function Hero() {
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.6 }}
-          className="mt-12 flex flex-col sm:flex-row items-center justify-center gap-4"
+          className="mt-6 flex flex-col items-center justify-center gap-3 sm:mt-8 sm:flex-row sm:gap-4 [@media(max-height:720px)]:mt-4"
         >
           <Link
             href="/contact"
-            className="group relative inline-flex items-center gap-2 px-8 py-4 rounded-full bg-gradient-to-r from-primary to-accent text-white font-medium text-lg hover:shadow-xl hover:shadow-primary/25 transition-all duration-300 hover:scale-105"
+            className="group relative inline-flex items-center gap-2 rounded-full bg-gradient-to-r from-primary to-accent px-6 py-3 text-base font-medium text-white transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-primary/25 sm:px-8 sm:py-3.5 sm:text-lg"
           >
             Start Your Project
             <ArrowRight
               size={20}
-              className="group-hover:translate-x-1 transition-transform"
+              className="transition-transform group-hover:translate-x-1"
             />
           </Link>
           <a
             href="#work"
-            className="inline-flex items-center gap-2 px-8 py-4 rounded-full border border-border text-white font-medium text-lg hover:bg-surface-light transition-all duration-300"
+            className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-base font-medium text-white transition-all duration-300 hover:bg-surface-light sm:px-8 sm:py-3.5 sm:text-lg"
           >
             View Our Work
           </a>
@@ -151,7 +151,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.8 }}
-          className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-3xl mx-auto"
+          className="mx-auto mt-10 grid max-w-3xl grid-cols-2 gap-4 sm:mt-12 sm:gap-6 md:mt-14 md:grid-cols-4 md:gap-8 [@media(max-height:720px)]:mt-6 [@media(max-height:720px)]:gap-3"
         >
           {[
             { number: "15+", label: "Projects Delivered" },
@@ -166,17 +166,19 @@ export default function Hero() {
               transition={{ duration: 0.4, delay: 1 + i * 0.1 }}
               className="text-center"
             >
-              <div className="text-3xl md:text-4xl font-bold gradient-text">
+              <div className="text-2xl font-bold gradient-text sm:text-3xl md:text-4xl [@media(max-height:720px)]:text-2xl">
                 {stat.number}
               </div>
-              <div className="text-sm text-muted mt-1">{stat.label}</div>
+              <div className="mt-1 text-xs text-muted sm:text-sm">
+                {stat.label}
+              </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
 
-      {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background to-transparent" />
+      {/* Bottom gradient fade — shorter so it doesn't crowd stats */}
+      <div className="pointer-events-none absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent sm:h-24" />
     </section>
   );
 }
